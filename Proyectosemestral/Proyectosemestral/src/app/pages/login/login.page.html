@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="email" placeholder="Ingresa tu email"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="email?.invalid && email?.touched">
+      <p *ngIf="email?.errors?.['required']">Email es requerido.</p>
+      <p *ngIf="email?.errors?.['email']">Email inválido.</p>
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input formControlName="password" type="password" placeholder="Ingresa tu contraseña"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="password?.invalid && password?.touched">
+      <p *ngIf="password?.errors?.['required']">Contraseña es requerida.</p>
+      <p *ngIf="password?.errors?.['minlength']">Contraseña debe tener al menos 6 caracteres.</p>
+    </ion-text>
+
+    <ion-button expand="block" type="submit" [disabled]="!loginForm.valid" class="ion-margin-top">
+      Iniciar Sesión
+    </ion-button>
+  </form>
+</ion-content>
