@@ -1,0 +1,9 @@
+<ion-item [color]="type === 'ingreso' ? 'success' : 'danger'">
+  <ion-label>
+    <h2>{{ description }}</h2>
+    <p>{{ category }}</p>
+  </ion-label>
+  <ion-note slot="end">
+    {{ amount | currency:'CLP':'symbol':'1.0-0' }}
+  </ion-note>
+</ion-item>

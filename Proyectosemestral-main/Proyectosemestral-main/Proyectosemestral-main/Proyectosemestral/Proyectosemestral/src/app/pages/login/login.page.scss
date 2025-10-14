@@ -1,0 +1,206 @@
+.login-content {
+  --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.login-wrapper {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 40px;
+
+  .logo-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+
+    .logo {
+      font-size: 2.5rem;
+      color: white;
+    }
+  }
+
+  .app-title {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+.login-form {
+  .input-item {
+    --background: rgba(255, 255, 255, 0.1);
+    --border-radius: 10px;
+    --border-color: rgba(255, 255, 255, 0.3);
+    --color: white;
+    margin-bottom: 15px;
+    backdrop-filter: blur(10px);
+
+    ion-label {
+      --color: rgba(255, 255, 255, 0.9);
+    }
+
+    ion-input {
+      --color: white;
+      --placeholder-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .eye-icon {
+      color: rgba(255, 255, 255, 0.8);
+      cursor: pointer;
+    }
+  }
+
+  .error-text {
+    color: #ff6b6b;
+    font-size: 0.875rem;
+    margin: -10px 0 15px 15px;
+  }
+
+  .login-btn {
+    --background: rgba(255, 255, 255, 0.2);
+    --border-radius: 25px;
+    --color: white;
+    font-weight: bold;
+    margin: 20px 0;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .links {
+    text-align: center;
+    margin-top: 20px;
+
+    a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-size: 0.875rem;
+      display: block;
+      margin: 5px 0;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+// Animations
+.animate__animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animate__bounceInDown {
+  animation-name: bounceInDown;
+}
+
+.animate__pulse {
+  animation-name: pulse;
+}
+
+.animate__infinite {
+  animation-iteration-count: infinite;
+}
+
+.animate__fadeInUp {
+  animation-name: fadeInUp;
+}
+
+.animate__fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+.animate__fadeInRight {
+  animation-name: fadeInRight;
+}
+
+.animate__delay-1s {
+  animation-delay: 1s;
+}
+
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-3000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(25px);
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

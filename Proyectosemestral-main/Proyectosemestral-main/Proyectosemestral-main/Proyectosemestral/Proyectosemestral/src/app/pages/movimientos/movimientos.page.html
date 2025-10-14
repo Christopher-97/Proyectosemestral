@@ -1,0 +1,108 @@
+<app-header title="Movimientos"></app-header>
+
+<ion-content [fullscreen]="true" class="movimientos-content">
+  <div class="movimientos-wrapper">
+
+    <!-- Balance resumido -->
+    <ion-card class="balance-card animate-card">
+      <ion-card-header>
+        <ion-card-title>Balance General</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="resumen-balance">
+          <div>
+            <h4>Ingresos</h4>
+            <p class="ingreso">+ $ 0</p>
+          </div>
+          <div>
+            <h4>Egresos</h4>
+            <p class="egreso">- $ 0</p>
+          </div>
+          <div>
+            <h4>Balance</h4>
+            <p class="balance">$ 0</p>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Formulario para agregar movimiento -->
+    <ion-card class="form-card animate-card">
+      <ion-card-header>
+        <ion-card-title>Agregar movimiento</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+
+        <!-- SEGMENT con clases específicas -->
+        <ion-segment [(ngModel)]="tipo" class="segmento-tipo animate-fade">
+          <ion-segment-button value="ingreso" class="seg-btn seg-ingreso" color="success">
+            <ion-icon name="trending-up-outline"></ion-icon>
+            <ion-label>Ingreso</ion-label>
+          </ion-segment-button>
+
+          <ion-segment-button value="egreso" class="seg-btn seg-egreso" color="danger">
+            <ion-icon name="trending-down-outline"></ion-icon>
+            <ion-label>Egreso</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+
+        <ion-list class="form-list">
+          <ion-item class="input-anim">
+            <ion-icon name="create-outline" slot="start"></ion-icon>
+            <ion-input
+              label="Descripción"
+              labelPlacement="floating"
+              placeholder="Ej: Sueldo / Almuerzo"
+              [(ngModel)]="description">
+            </ion-input>
+          </ion-item>
+
+          <ion-item class="input-anim">
+            <ion-icon name="pricetags-outline" slot="start"></ion-icon>
+            <ion-input
+              label="Categoría"
+              labelPlacement="floating"
+              placeholder="Comida, Transporte, etc."
+              [(ngModel)]="category">
+            </ion-input>
+          </ion-item>
+
+          <ion-item class="input-anim">
+            <ion-icon name="cash-outline" slot="start"></ion-icon>
+            <ion-input
+              type="number"
+              label="Monto"
+              labelPlacement="floating"
+              placeholder="0"
+              [(ngModel)]="amount">
+            </ion-input>
+          </ion-item>
+        </ion-list>
+
+        <ion-button expand="block" class="btn-agregar pulse" (click)="agregar()">
+          <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+          Agregar Movimiento
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Lista de movimientos -->
+    <ion-list *ngIf="lista.length" class="lista-movimientos animate-list">
+      <app-movement-item
+        *ngFor="let m of lista"
+        [description]="m.description"
+        [category]="m.category"
+        [amount]="m.amount"
+        [type]="m.type">
+      </app-movement-item>
+    </ion-list>
+
+    <!-- Mensaje vacío -->
+    <ion-text *ngIf="!lista.length" color="medium">
+      <p class="ion-text-center sin-movimientos animate-fade">
+        No tienes movimientos registrados
+      </p>
+    </ion-text>
+
+  </div>
+</ion-content>
