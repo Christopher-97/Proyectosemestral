@@ -1,0 +1,123 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@finanzas.com",
+      "password": "123456",
+      "created_at": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "email": "usuario@finanzas.com",
+      "password": "123456",
+      "created_at": "2024-01-02T00:00:00.000Z"
+    }
+  ],
+  "sessions": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "active": false,
+      "last_login": null
+    }
+  ],
+  "transactions": [
+    {
+      "id": "1",
+      "type": "income",
+      "amount": 5000,
+      "category": "Salario",
+      "description": "Salario mensual",
+      "date": "2024-01-01T00:00:00.000Z",
+      "currency": "COP"
+    },
+    {
+      "id": "2",
+      "type": "expense",
+      "amount": 1500,
+      "category": "Alimentación",
+      "description": "Compra supermercado",
+      "date": "2024-01-02T00:00:00.000Z",
+      "currency": "COP"
+    },
+    {
+      "id": "3",
+      "type": "expense",
+      "amount": 800,
+      "category": "Transporte",
+      "description": "Gasolina",
+      "date": "2024-01-03T00:00:00.000Z",
+      "currency": "COP"
+    },
+    {
+      "id": "4",
+      "type": "income",
+      "amount": 2000,
+      "category": "Freelance",
+      "description": "Proyecto web",
+      "date": "2024-01-04T00:00:00.000Z",
+      "currency": "COP"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Salario",
+      "budget_limit": 0,
+      "color": "#4CAF50"
+    },
+    {
+      "id": 2,
+      "name": "Alimentación",
+      "budget_limit": 2000,
+      "color": "#FF9800"
+    },
+    {
+      "id": 3,
+      "name": "Transporte",
+      "budget_limit": 1000,
+      "color": "#2196F3"
+    },
+    {
+      "id": 4,
+      "name": "Entretenimiento",
+      "budget_limit": 500,
+      "color": "#9C27B0"
+    },
+    {
+      "id": 5,
+      "name": "Servicios",
+      "budget_limit": 1500,
+      "color": "#FF5722"
+    },
+    {
+      "id": 6,
+      "name": "Freelance",
+      "budget_limit": 0,
+      "color": "#00BCD4"
+    }
+  ],
+  "exchange_rates": [
+    {
+      "id": 1,
+      "from_currency": "USD",
+      "to_currency": "COP",
+      "rate": 4100,
+      "date": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "from_currency": "EUR",
+      "to_currency": "COP",
+      "rate": 4500,
+      "date": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "from_currency": "USD",
+      "to_currency": "EUR",
+      "rate": 0.91,
+      "date": "2024-01-01T00:00:00.000Z"
+    }
+  ]
+}

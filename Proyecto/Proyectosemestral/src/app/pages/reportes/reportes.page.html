@@ -1,0 +1,106 @@
+<app-header title="Reportes"></app-header>
+
+<ion-content [fullscreen]="true" class="reportes-content">
+
+  <!-- ======= CALENDARIO Y EXPORTAR ======= -->
+  <ion-card class="filtros-card">
+    <ion-card-content>
+      <div class="calendarios">
+        <ion-datetime placeholder="Desde" presentation="date"></ion-datetime>
+        <ion-datetime placeholder="Hasta" presentation="date"></ion-datetime>
+      </div>
+      <div class="acciones">
+        <ion-button color="primary" size="small" fill="solid">
+          <ion-icon slot="start" name="download-outline"></ion-icon>
+          Exportar
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- ======= RESUMEN (valores consistentes) ======= -->
+  <div class="resumen-grid">
+    <ion-card class="resumen-card ingreso">
+      <ion-card-header>
+        <ion-card-subtitle>Ingresos</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>+$12,000</h2>
+        <p>vs periodo anterior</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="resumen-card egreso">
+      <ion-card-header>
+        <ion-card-subtitle>Egresos</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>-$1,440</h2>
+        <p>Más frecuente: Comida</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="resumen-card balance">
+      <ion-card-header>
+        <ion-card-subtitle>Balance</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>$10,560</h2>
+        <p>Meta mensual: $600</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- ======= GASTOS POR CATEGORÍA ======= -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Gastos por categoría</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="chart-placeholder">
+        <p>Aquí irá el gráfico</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- ======= MOVIMIENTOS RECIENTES ======= -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Movimientos recientes</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item class="movimiento egreso">
+          <ion-label>
+            <h3>Supermercado</h3>
+            <p>10/09/2025 - Comida</p>
+          </ion-label>
+          <ion-note slot="end" color="danger">- $1,440</ion-note>
+        </ion-item>
+
+        <ion-item class="movimiento ingreso">
+          <ion-label>
+            <h3>Pago salario</h3>
+            <p>01/09/2025 - Ingreso</p>
+          </ion-label>
+          <ion-note slot="end" color="success">+ $12,000</ion-note>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- ======= RECOMENDACIONES ======= -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Recomendaciones</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ul class="recomendaciones">
+        <li>Revisa tu gasto en Comida, representa 32% del total.</li>
+        <li>Tus ingresos aumentaron un 15% respecto al periodo anterior.</li>
+        <li>Considera una meta de ahorro del 10% mensual.</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

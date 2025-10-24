@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Página No Encontrada</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Página No Encontrada</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container">
+    <ion-icon name="warning-outline" size="large" color="warning"></ion-icon>
+    <h1>404</h1>
+    <h2>¡Oops! Página no encontrada</h2>
+    <p>La página que buscas no existe o ha sido movida.</p>
+
+    <ion-button expand="block" (click)="goHome()">
+      <ion-icon slot="start" name="home-outline"></ion-icon>
+      Ir al Inicio
+    </ion-button>
+  </div>
+</ion-content>

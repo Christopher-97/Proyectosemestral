@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ isLoginMode ? 'Login' : 'Registro' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ isLoginMode ? 'Login' : 'Registro' }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="email" placeholder="Ingresa tu email"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="email?.invalid && email?.touched">
+      <p *ngIf="email?.errors?.['required']">Email es requerido.</p>
+      <p *ngIf="email?.errors?.['email']">Email inválido.</p>
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input formControlName="password" type="password" placeholder="Ingresa tu contraseña"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="password?.invalid && password?.touched">
+      <p *ngIf="password?.errors?.['required']">Contraseña es requerida.</p>
+      <p *ngIf="password?.errors?.['minlength']">Contraseña debe tener al menos 6 caracteres.</p>
+    </ion-text>
+
+    <ion-button expand="block" type="submit" [disabled]="!loginForm.valid" class="ion-margin-top">
+      {{ isLoginMode ? 'Iniciar Sesión' : 'Registrarse' }}
+    </ion-button>
+  </form>
+
+  <ion-button fill="clear" expand="block" (click)="toggleMode()" class="ion-margin-top">
+    {{ isLoginMode ? '¿No tienes cuenta? Regístrate' : '¿Ya tienes cuenta? Inicia sesión' }}
+  </ion-button>
+
+  <ion-card *ngIf="isLoginMode" class="ion-margin-top">
+    <ion-card-header>
+      <ion-card-title>Credenciales de Prueba</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Email:</strong> admin@finanzas.com</p>
+      <p><strong>Contraseña:</strong> 123456</p>
+      <p><em>Nota: Estas credenciales funcionan tanto para login como para registro.</em></p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

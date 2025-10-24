@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  text-align: center;
+  padding: 20px;
+
+  ion-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: var(--ion-color-primary);
+    margin: 10px 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin: 10px 0 20px 0;
+  }
+
+  p {
+    color: var(--ion-color-medium);
+    margin-bottom: 30px;
+  }
+}
